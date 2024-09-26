@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Login Page</title>
+</head>
+<body>
+<div class="login-container">
+    <h2>User Login</h2>
+    <form action="/new_login" method="post">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="login_username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="login_password"
+                   required>
+        </div>
+        <a href="/register">Don't Have an account? Register Here</a>
+        <button type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>

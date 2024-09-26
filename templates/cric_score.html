@@ -1,0 +1,53 @@
+<!-- cric_score.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Score View</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',
+    filename='/css/style.css') }}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center">Match Details</h1>
+    {% if match_details %}
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Team A</th>
+                <th>Team B</th>
+                <th>Batsman 1</th>
+                <th>Batsman 2</th>
+                <th>Bowler</th>
+                <th>Commentary</th>
+                <th>Runs</th>
+                <th>Overs</th>
+                <th>Wickets</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ match_details.team_a }}</td>
+                <td>{{ match_details.team_b }}</td>
+                <td>{{ match_details.batsman_1 }}</td>
+                <td>{{ match_details.batsman_2 }}</td>
+                <td>{{ match_details.bowler }}</td>
+                <td>{{ match_details.commentry }}</td>
+                <td>{{ match_details.runs }}</td>
+                <td>{{ match_details.overs }}</td>
+                <td>{{ match_details.wickets }}</td>
+            </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-center">No match details available.</p>
+    {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

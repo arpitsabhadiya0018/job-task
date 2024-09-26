@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <title>Admin Cricket Match Setup</title>
+</head>
+<body>
+<div class="container mt-5">
+    <header class="text-center mb-4">
+        <h1>Admin Cricket Match Setup</h1>
+    </header>
+
+    <form class="bg-light p-4 rounded shadow" action="/admin"
+          method="post">
+        <div class="form-group">
+            <label for="teamA">Select Team A:</label>
+            <input type="text" class="form-control" id="teamA" name="teamA"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="teamB">Select Team B:</label>
+            <input type="text" class="form-control" id="teamB" name="teamB"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="batsmanA">Select Batsman (Team A):</label>
+            <input type="text" class="form-control" id="batsmanA"
+                   name="batsmanA" required>
+        </div>
+        <div class="form-group">
+            <label for="batsmanB">Select Batsman (Team B):</label>
+            <input type="text" class="form-control" id="batsmanB"
+                   name="batsmanB" required>
+        </div>
+        <div class="form-group">
+            <label for="bowler">Select Bowler:</label>
+            <input type="text" class="form-control" id="bowler" name="bowler"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="commentary">Commentary:</label>
+            <textarea class="form-control" id="commentary" name="commentary"
+                      rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="runs">Runs:</label>
+            <input type="number" class="form-control" id="runs" name="runs"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="overs">Overs:</label>
+            <input type="text" class="form-control" id="overs" name="overs"
+                   required placeholder="e.g. 5.3 (5 balls)">
+        </div>
+        <div class="form-group">
+            <label for="wickets">Wickets:</label>
+            <input type="number" class="form-control" id="wickets"
+                   name="wickets" required>
+        </div>
+        <button type="submit" target="_blank" class="btn btn-primary
+            btn-block">Submit Match Details
+        </button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
