@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, \
+    session
 import mysql.connector
 
 app = Flask(__name__)
@@ -44,10 +45,12 @@ def new_login():
     if admin_user == login_username and admin_pass == login_password:
         return redirect(url_for('admin'))
 
-    if login_username in users and users[login_username] == login_password:
+    if login_username in users and users[
+        login_username] == login_password:
 
         cursor = mydb.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM match_details ORDER BY id DESC LIMIT 1")
+        cursor.execute(
+            "SELECT * FROM match_details ORDER BY id DESC LIMIT 1")
         match_details = cursor.fetchone()
         cursor.close()
 
@@ -63,11 +66,13 @@ def new_login():
 @app.route('/score_view')
 def score_view():
     match_details = session.get('match_details', None)
-    print("Match details in score view:", match_details)  # Debugging output
+    print("Match details in score view:",
+          match_details)  # Debugging output
 
     session.pop('match_details', None)
 
-    return render_template('cric_score.html', match_details=match_details)
+    return render_template('cric_score.html',
+                           match_details=match_details)
 
 
 @app.route('/admin', methods=['GET', 'POST'])
@@ -88,7 +93,8 @@ def admin():
                "batsman_2, bowler, commentry, runs, overs, wickets) "
                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
         val = (
-            teamA, teamB, batsmanA, batsmanB, bowler, commentary, runs, overs,
+            teamA, teamB, batsmanA, batsmanB, bowler, commentary, runs,
+            overs,
             wickets)
         mycursor.execute(sql, val)
         mydb.commit()
@@ -100,4 +106,4 @@ def admin():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")
